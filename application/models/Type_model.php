@@ -12,12 +12,17 @@
 
 		}
 
-/*		public function add_type(){
+		public function add_type(){
 			$data = array(
 				'type_name' => $this->input->post('type_name')
 			);
 
 			return $this->db->insert('Type', $data);
 		}
-*/
+
+		public function delete($id){
+			$this->db->delete('Type', array('type_id' => $id));
+			return;
+		}
+
 	}

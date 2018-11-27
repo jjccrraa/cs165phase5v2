@@ -8,20 +8,25 @@
 			$this->load->view('type/index', $data);
 			$this->load->view('templates/footer');
 		}
-/*
+
 		public function add(){
 
 			$this->form_validation->set_rules('type_name', 'Type Name', 'required');
 
 			if ($this->form_validation->run() === FALSE) {
 				$this->load->view('templates/header');
-				$this->load->view('posts/add', $data);
+				$this->load->view('type/add');
 				$this->load->view('templates/footer');
 			}
 			else{
 				$this->type_model->add_type();
-				redirect('posts');
+				redirect('viewtype');
 			}
 		}
-*/
+
+		public function delete($id){
+			$this->type_model->delete($id);
+			redirect('viewtype');
+		}
+
 	}

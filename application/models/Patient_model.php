@@ -25,4 +25,16 @@
 
 			return $this->db->insert('Patient', $data);
 		}
+
+		
+		public function delete($id){
+			$this->db->delete('Patient', array('patient_id' => $id));
+			return;
+		}
+		
+		/*
+		public function update() {
+
+		}
+		*/
 	}

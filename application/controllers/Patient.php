@@ -29,4 +29,9 @@
 			}
 		}
 
+		public function delete($id){
+			$this->patient_model->delete($id);
+			redirect('viewpatient');
+		}
+
 	}

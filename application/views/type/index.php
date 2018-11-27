@@ -16,7 +16,7 @@
         <td>
           <center>
             <a href="https://twitter.com"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
-            <a href="https://twitter.com/gkmanguiat"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
+            <a href="<?php echo site_url();?>deletetype/<?php echo $element->type_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
           </center>
         </td>
       </tr>

@@ -11,4 +11,17 @@
 			return $query->result();
 
 		}
+
+		public function add_condition(){
+			$data = array(
+				'condition_name' => $this->input->post('condition_name')
+			);
+
+			return $this->db->insert('Conditions', $data);
+		}
+
+		public function delete($id){
+			$this->db->delete('Conditions', array('condition_id' => $id));
+			return;
+		}
 	}

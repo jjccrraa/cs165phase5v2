@@ -23,8 +23,8 @@
         <td><?php echo $element->sex; ?></td>
         <td>
           <center>
-            <a href="https://twitter.com"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
-            <a href="https://twitter.com/gkmanguiat"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
+            <a href="<?php echo site_url();?>updatepatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
+            <a href="<?php echo site_url();?>deletepatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
           </center>
         </td>
       </tr>
