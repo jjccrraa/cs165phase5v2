@@ -23,12 +23,17 @@
         <td><?php echo $element->sex; ?></td>
         <td>
           <center>
+<<<<<<< HEAD
             <!-- code for update -->
             <a href="https://twitter.com"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
 
             <!-- code for delete -->
 
             <a href="<?php echo site_url();?>delpatient/<?php echo $element -> patient_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
+=======
+            <a href="<?php echo site_url();?>editpatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
+            <a href="<?php echo site_url();?>deletepatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
+>>>>>>> 650887e55b0e8a60f8bf6363264a99836cbaf3bb
           </center>
         </td>
       </tr>

@@ -25,9 +25,28 @@
 
 			return $this->db->insert('Patient', $data);
 		}
+<<<<<<< HEAD
 
 		public function del_patient($id){
 			$this -> db -> delete('Patient', array('patient_id' => $id) );
 			return;
 		}
+=======
+		
+		public function update_patient() {
+
+			$data = array(
+				'first_name' => $this->input->post('first_name'),
+				'middle_name' => $this->input->post('middle_name'),
+				'last_name' => $this->input->post('last_name'),
+				'name_suffix' => $this->input->post('name_suffix'),
+				'birthdate' => $this->input->post('birthdate'),
+				'sex' => $this->input->post('sex')
+			);
+
+			$this->db->where('patient_id', $this->input->post('patient_id'));
+			return $this->db->update('Patient', $data);
+		}
+		
+>>>>>>> 650887e55b0e8a60f8bf6363264a99836cbaf3bb
 	}

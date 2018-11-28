@@ -29,9 +29,38 @@
 			}
 		}
 
+<<<<<<< HEAD
 		public function del ($id) {
 			$this->patient_model->del_patient($id);
 			redirect('viewpatient');
 		}
 
+=======
+		public function edit($id){
+
+			$data['Patient'] = $this->patient_model->edit_patient($id);
+
+			$this->load->view('templates/header');
+			$this->load->view('patient/edit', $data);
+			$this->load->view('templates/footer');
+		}
+
+		public function update(){
+			//$this->patient_model->update_patient();
+			//redirect('viewpatient');
+
+			$this->form_validation->set_rules('first_name', 'First Name', 'required');
+			$this->form_validation->set_rules('last_name', 'Last Name', 'required');																																																																																																		
+			$this->form_validation->set_rules('sex', 'Gender (Male/Female/Others)', 'required');
+			$this->form_validation->set_rules('birthdate', 'YYYY-MM-DD', 'required');
+
+			if ($this->form_validation->run() === FALSE){
+				redirect('editpatient/'.$this->input->post('patient_id'));
+			}
+			else{
+				$this->patient_model->update_patient();
+				redirect('viewpatient');
+			}
+		}
+>>>>>>> 650887e55b0e8a60f8bf6363264a99836cbaf3bb
 	}
