@@ -29,13 +29,13 @@
 			}
 		}
 
-<<<<<<< HEAD
+
 		public function del ($id) {
 			$this->patient_model->del_patient($id);
 			redirect('viewpatient');
 		}
 
-=======
+
 		public function edit($id){
 
 			$data['Patient'] = $this->patient_model->edit_patient($id);
@@ -62,5 +62,4 @@
 				redirect('viewpatient');
 			}
 		}
->>>>>>> 650887e55b0e8a60f8bf6363264a99836cbaf3bb
 	}
