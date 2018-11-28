@@ -26,6 +26,11 @@
 			return $this->db->insert('Patient', $data);
 		}
 		
+		public function edit_patient($id) {
+			$query = $this->db->get_where('Patient', array('patient_id' => $id ));
+			return $query->result();
+		}
+
 		public function update_patient() {
 
 			$data = array(

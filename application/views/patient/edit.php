@@ -5,14 +5,14 @@
     </div>
     <?php echo validation_errors(); ?>
     <?php echo form_open('patient/update'); ?>
-    <?php foreach ($Type as $element) : ?>
+    <?php foreach ($Patient as $element) : ?>
     <form class="ui equal width mini form">
       <div class="ui stacked segment">
         <div class="field">
           <label>First Name</label>
           <div class="ui left icon input">
             <i class="user circle icon"></i>
-            <input type="hidden" name="type_id" value="<?php echo $element->patient_id;  ?>">
+            <input type="hidden" name="patient_id" value="<?php echo $element->patient_id;  ?>">
             <input type="text" name="first_name" placeholder="First Name" value="<?php echo $element->first_name;  ?>">
           </div>
         </div>
