@@ -15,14 +15,19 @@
 		public function add_patient(){
 			
 			$data = array(
-				'first_name' => $this->input->post('first_name'),
+				'first_name'  => $this->input->post('first_name'),
 				'middle_name' => $this->input->post('middle_name'),
-				'last_name' => $this->input->post('last_name'),
+				'last_name'   => $this->input->post('last_name'),
 				'name_suffix' => $this->input->post('name_suffix'),
-				'birthdate' => $this->input->post('birthdate'),
-				'sex' => $this->input->post('sex')
+				'birthdate'   => $this->input->post('birthdate'),
+				'sex' 		  => $this->input->post('sex')
 			);
 
 			return $this->db->insert('Patient', $data);
+		}
+
+		public function del_patient($id){
+			$this -> db -> delete('Patient', array('patient_id' => $id) );
+			return;
 		}
 	}

@@ -54,7 +54,8 @@ $route['viewpatient'] = 'patient/index';
 $route['viewspecimen'] = 'specimen/index';
 $route['viewtype'] = 'type/index';
 $route['viewconditions'] = 'conditions/index';
-$route['addpatient'] = 'patient/add';
+$route['addpatient'] 	 = 'patient/add';
+$route['delpatient/(:any)'] 	 = 'patient/del/$1';
 ///
 $route['default_controller'] = 'home/index';
 $route['(:any)'] = 'home/index/$1';
