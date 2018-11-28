@@ -13,18 +13,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Glenn Karlo</td>
-      <td>September 14, 2013</td>
-      <td>jhlilk22@yahoo.com</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td><center>
-        <a href="https://twitter.com"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
-        <a href="https://twitter.com/gkmanguiat"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
-      </center></td>
-    </tr>
     <?php foreach ($Specimen as $element) : ?>
       <tr>
         <td><?php echo $element->specimen_id; ?></td>

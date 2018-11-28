@@ -20,7 +20,7 @@
           <label>Middle Name</label>
           <div class="ui left icon input">
             <i class="user circle icon"></i>
-            <input type="text" name="middle_ame" placeholder="Middle Name" value="<?php echo $element->middle_name;  ?>">
+            <input type="text" name="middle_name" placeholder="Middle Name" value="<?php echo $element->middle_name;  ?>">
           </div>
         </div>
         <div class="field">
