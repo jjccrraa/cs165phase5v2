@@ -54,13 +54,13 @@ $route['viewpatient'] = 'patient/index';
 $route['viewspecimen'] = 'specimen/index';
 $route['viewtype'] = 'type/index';
 $route['viewconditions'] = 'conditions/index';
+
 $route['addpatient'] = 'patient/add';
 $route['addtype'] = 'type/add';
 $route['addcondition'] = 'conditions/add';
-//$route['updatepatient/(:any)'] = 'patient/update/$1';
-$route['deletepatient/(:any)'] = 'patient/delete/$1';
-$route['deletetype/(:any)'] = 'type/delete/$1';
-$route['deletecondition/(:any)'] = 'conditions/delete/$1';
+
+$route['editpatient/(:any)'] = 'patient/edit/$1';
+$route['edittype/(:any)'] = 'type/edit/$1';
 ///
 $route['default_controller'] = 'home/index';
 $route['(:any)'] = 'home/index/$1';

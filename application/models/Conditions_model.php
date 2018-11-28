@@ -19,9 +19,4 @@
 
 			return $this->db->insert('Conditions', $data);
 		}
-
-		public function delete($id){
-			$this->db->delete('Conditions', array('condition_id' => $id));
-			return;
-		}
 	}

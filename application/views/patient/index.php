@@ -23,7 +23,7 @@
         <td><?php echo $element->sex; ?></td>
         <td>
           <center>
-            <a href="<?php echo site_url();?>updatepatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
+            <a href="<?php echo site_url();?>editpatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
             <a href="<?php echo site_url();?>deletepatient/<?php echo $element->patient_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
           </center>
         </td>

@@ -25,9 +25,4 @@
 				redirect('viewconditions');
 			}
 		}
-
-		public function delete($id){
-			$this->conditions_model->delete($id);
-			redirect('viewconditions');
-		}
 	}
