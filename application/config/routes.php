@@ -55,12 +55,6 @@ $route['viewspecimen'] = 'specimen/index';
 $route['viewtype'] = 'type/index';
 $route['viewconditions'] = 'conditions/index';
 
-// deletes
-$route['delpatient/(:any)']   = 'patient/del/$1';
-$route['delspecimen/(:any)']  = 'specimen/del/$1';
-$route['deltype/(:any)']      = 'type/del/$1';
-$route['delcondition/(:any)'] = 'conditions/del/$1';
-
 
 // adds
 $route['addpatient']   = 'patient/add';
@@ -68,12 +62,20 @@ $route['addtype'] 	   = 'type/add';
 $route['addcondition'] = 'conditions/add';
 $route['addspecimen']  = 'specimen/add';
 
+// deletes
+$route['delpatient/(:any)']   = 'patient/del/$1';
+$route['delspecimen/(:any)']  = 'specimen/del/$1';
+$route['deltype/(:any)']      = 'type/del/$1';
+$route['delcondition/(:any)'] = 'conditions/del/$1';
+
+
 // edits
 $route['editpatient/(:any)']   = 'patient/edit/$1';
+$route['editspecimen/(:any)']  = 'specimen/edit/$1';
 $route['edittype/(:any)'] 	   = 'type/edit/$1';
 $route['editcondition/(:any)'] = 'conditions/edit/$1';
 
-///
+// defaults
 $route['default_controller'] = 'home/index';
 $route['(:any)'] = 'home/index/$1';
 $route['404_override'] = '';

@@ -34,22 +34,12 @@
 			redirect('viewpatient');
 		}
 
-
-		public function edit($id){
-
-			$data['Patient'] = $this->patient_model->edit_patient($id);
-
-			$this->load->view('templates/header');
-			$this->load->view('patient/edit', $data);
-			$this->load->view('templates/footer');
-		}
-
-		public function update(){
+		public function update(){ # update form
 			//$this->patient_model->update_patient();
 			//redirect('viewpatient');
 
 			$this->form_validation->set_rules('first_name', 'First Name', 'required');
-			$this->form_validation->set_rules('last_name', 'Last Name', 'required');																																																																																																		
+			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
 			$this->form_validation->set_rules('sex', 'Gender (Male/Female/Others)', 'required');
 			$this->form_validation->set_rules('birthdate', 'YYYY-MM-DD', 'required');
 
@@ -60,5 +50,14 @@
 				$this->patient_model->update_patient();
 				redirect('viewpatient');
 			}
+		}
+
+		public function edit($id){ # update form submit
+
+			$data['Patient'] = $this->patient_model->edit_patient($id);
+
+			$this->load->view('templates/header');
+			$this->load->view('patient/edit', $data);
+			$this->load->view('templates/footer');
 		}
 	}

@@ -23,8 +23,8 @@
         <td><?php echo $element->date_acquired; ?></td>
         <td>
           <center>
-            <a href="https://twitter.com"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
-            <a href="<?php echo site_url();?>delspecimen/<?php echo $element -> patient_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
+            <a href="<?php echo site_url();?>editspecimen/<?php echo $element -> specimen_id; ?>"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
+            <a href="<?php echo site_url();?>delspecimen/<?php echo $element -> specimen_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
           </center>
         </td>
       </tr>

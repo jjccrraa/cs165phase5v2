@@ -5,8 +5,6 @@
 		}
 
 		public function get_patient(){
-			//$query = $this->db->get_where('Type');
-			//return $query->row_array();
 			$query = $this->db->get("Patient"); 
 			return $query->result();
 

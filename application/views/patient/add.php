@@ -18,7 +18,7 @@
           <label>Middle Name</label>
           <div class="ui left icon input">
             <i class="user circle icon"></i>
-            <input type="text" name="middle_ame" placeholder="Middle Name">
+            <input type="text" name="middle_name" placeholder="Middle Name">
           </div>
         </div>
         <div class="field">
