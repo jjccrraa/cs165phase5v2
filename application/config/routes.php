@@ -66,6 +66,7 @@ $route['delcondition/(:any)'] = 'conditions/del/$1';
 $route['addpatient']   = 'patient/add';
 $route['addtype'] 	   = 'type/add';
 $route['addcondition'] = 'conditions/add';
+$route['addspecimen']  = 'specimen/add';
 
 // edits
 $route['editpatient/(:any)']   = 'patient/edit/$1';

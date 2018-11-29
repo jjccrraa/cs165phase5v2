@@ -11,8 +11,15 @@
 			$this->load->view('templates/footer');
 		}
 
+
 		public function del ($id) {
 			$this->specimen_model->del_specimen($id);
 			redirect('viewspecimen');
+
+		public function add(){
+
+			$this->load->view('templates/header');
+			$this->load->view('specimen/add');
+			$this->load->view('templates/footer');
 		}
 	}

@@ -16,9 +16,9 @@
     <?php foreach ($Specimen as $element) : ?>
       <tr>
         <td><?php echo $element->specimen_id; ?></td>
-        <td><?php echo $element->patient_id; ?></td>
-        <td><?php echo $element->condition_id; ?></td>
-        <td><?php echo $element->type_id; ?></td>
+        <td><?php echo $element->first_name." ".$element->middle_name." ".$element->last_name." ".$element->name_suffix; ?></td>
+        <td><?php echo $element->condition_name; ?></td>
+        <td><?php echo $element->type_name; ?></td>
         <td><?php echo $element->description; ?></td>
         <td><?php echo $element->date_acquired; ?></td>
         <td>
