@@ -12,12 +12,11 @@
 		}
 
 		public function add(){
-
 			$this->form_validation->set_rules('first_name', 'First Name', 'required');
-			$this->form_validation->set_rules('last_name', 'Last Name', 'required');																		
+			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
 			$this->form_validation->set_rules('sex', 'Gender (Male/Female/Others)', 'required');
 			$this->form_validation->set_rules('birthdate', 'YYYY-MM-DD', 'required');
-
+			
 			if ($this->form_validation->run() === FALSE) {
 				$this->load->view('templates/header');
 				$this->load->view('patient/add');

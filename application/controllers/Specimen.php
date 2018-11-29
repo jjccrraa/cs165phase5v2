@@ -15,11 +15,21 @@
 		public function del ($id) {
 			$this->specimen_model->del_specimen($id);
 			redirect('viewspecimen');
+		}
 
 		public function add(){
-
-			$this->load->view('templates/header');
-			$this->load->view('specimen/add');
-			$this->load->view('templates/footer');
+			$this->form_validation->set_rules('PatientID', 'Patient ID', 'required');
+			$this->form_validation->set_rules('TypeID', 'Type ID', 'required');
+			$this->form_validation->set_rules('ConditionID', 'Condition ID', 'required');
+			
+			if ($this->form_validation->run() === FALSE) {
+				$this->load->view('templates/header');
+				$this->load->view('specimen/add');
+				$this->load->view('templates/footer');
+			}
+			else{
+				$this->specimen_model->add_specimen();
+				redirect('viewspecimen');
+			}
 		}
 	}

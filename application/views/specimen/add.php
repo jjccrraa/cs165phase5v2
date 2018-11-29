@@ -1,8 +1,11 @@
 <div class="ui top aligned center aligned grid">
-  <div class="six wide column">
+  <div class="eight wide column">
    <div class="ui tiny green message">
       <i class="plus icon"></i> Add a new specimen
     </div>
+
+    <?php echo validation_errors(); ?>
+    <?php echo form_open('specimen/add'); ?>
     <form class="ui equal width form">
       <div class="ui stacked segment">
         <div class="fields">
@@ -23,8 +26,8 @@
             </div>
           </div>
           <div class="field">
-              <label>Condition ID</label>
-              <div class="ui left icon input">
+            <label>Condition ID</label>
+            <div class="ui left icon input">
             <i class="plus icon"></i>
               <input type="text" name="ConditionID" placeholder="xxxxxx">
             </div>
@@ -34,7 +37,7 @@
           <label>Specimen Description</label>
           <textarea rows="2"></textarea>
         </div> 
-        <div class="ui fluid small green submit button">Submit</div>
+        <input class="ui fluid small green submit button" type="submit" placeholder="Submit">
       </div>
       <div class="ui error message"></div>
     </form>

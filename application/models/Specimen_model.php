@@ -21,7 +21,17 @@
 			return $query->result();
 		}
 
-		public function del_patient($id){
+		public function add_specimen(){
+			$data = array(
+				'patient_id'   => $this->input->post('PatientID'),
+				'type_id' 	  => $this->input->post('TypeID'),
+				'condition_id' => $this->input->post('ConditionID')
+			);
+
+			return $this->db->insert('Specimen', $data);
+		}
+
+		public function del_specimen($id){
 			$this -> db -> delete('Specimen', array('specimen_id' => $id) );
 			return;
 		}

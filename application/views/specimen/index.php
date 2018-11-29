@@ -31,5 +31,5 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-<a href="<?php echo site_url();?>/addspecimen"><button class="ui positive button" style="margin-left: 87.9%">Add New Specimen</button></a>
+<a href="<?php echo site_url();?>addspecimen"><button class="ui positive button" style="margin-left: 87.9%">Add New Specimen</button></a>
 </div>
