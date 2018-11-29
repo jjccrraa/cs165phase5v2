@@ -10,4 +10,11 @@
 			$this->load->view('specimen/index', $data);
 			$this->load->view('templates/footer');
 		}
+
+		public function add(){
+
+			$this->load->view('templates/header');
+			$this->load->view('specimen/add');
+			$this->load->view('templates/footer');
+		}
 	}
