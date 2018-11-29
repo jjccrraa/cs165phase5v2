@@ -35,9 +35,6 @@
 		}
 
 		public function update(){ # update form
-			//$this->patient_model->update_patient();
-			//redirect('viewpatient');
-
 			$this->form_validation->set_rules('first_name', 'First Name', 'required');
 			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
 			$this->form_validation->set_rules('sex', 'Gender (Male/Female/Others)', 'required');

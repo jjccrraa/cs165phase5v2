@@ -12,9 +12,9 @@
 		}
 
 		public function add(){
-			$this->form_validation->set_rules('patient_id', 'Patient ID', 'required');
+			// $this->form_validation->set_rules('patient_id', 'Patient ID', 'required');
 			$this->form_validation->set_rules('type_id', 'Type ID', 'required');
-			$this->form_validation->set_rules('condition_id', 'Condition ID', 'required');
+			// $this->form_validation->set_rules('condition_id', 'Condition ID', 'required');
 			
 			if ($this->form_validation->run() === FALSE) {
 				$this->load->view('templates/header');
