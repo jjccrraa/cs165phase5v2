@@ -10,8 +10,24 @@
                   ->join('Patient', 'Patient.patient_id = Specimen.patient_id')
                   ->join('Conditions', 'Conditions.condition_id = Specimen.condition_id')
                   ->join('Type', 'Type.type_id = Specimen.type_id')
+                  ->order_by('specimen_id', 'ASC')
                   ->get();
 
+			return $query->result();
+		}
+
+		public function get_patient(){
+			$query = $this->db->get("Patient"); 
+			return $query->result();
+		}
+
+		public function get_type(){
+			$query = $this->db->get("Type"); 
+			return $query->result();
+		}
+
+		public function get_conditions(){
+			$query = $this->db->get("Conditions"); 
 			return $query->result();
 		}
 

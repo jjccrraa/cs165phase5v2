@@ -10,37 +10,35 @@
       <div class="ui stacked segment">
         <div class="fields">
           <div class="field">
-              <label>Patient ID</label>
-              <div class="ui left icon input">
-            <i class="stethoscope icon"></i>
-              <input type="text" name="patient_id" placeholder="xxxxxx">
-            </div>
+            <label>Patient</label>
+              <select name="patient_id" class="ui dropdown">
+                <?php foreach ($Patient as $element) : ?>
+                <option value="<?php echo $element->patient_id; ?>"><?php echo $element->first_name." ".$element->middle_name." ".$element->last_name." ".$element->name_suffix; ?></option>
+                <?php endforeach; ?>
+              </select>
           </div>    
         </div>
         <div class="fields">
           <div class="field">
-            <label>Type ID</label>
-            <div class="ui left icon input">
-            <i class="folder icon"></i>
-              <input type="text" name="type_id" placeholder="xxxxxx">
-            </div>
+            <label>Type</label>
+              <select name="type_id" class="ui dropdown">
+                <?php foreach ($Type as $element) : ?>
+                <option value="<?php echo $element->type_id; ?>"><?php echo $element->type_name; ?></option>
+                <?php endforeach; ?>
+              </select>
           </div>
           <div class="field">
-            <label>Condition ID</label>
-            <div class="ui left icon input">
-            <i class="plus icon"></i>
-              <input type="text" name="condition_id" placeholder="xxxxxx">
-            </div>
+            <label>Condition</label>
+              <select name="condition_id" class="ui dropdown">
+                <?php foreach ($Conditions as $element) : ?>
+                <option value="<?php echo $element->condition_id; ?>"><?php echo $element->condition_name; ?></option>
+                <?php endforeach; ?>
+              </select>
           </div>    
         </div>
          <div class="field">
           <label>Specimen Description</label>
-          <div class="ui left icon input">
-            <i class="plus icon"></i>
-              <input type="text" name="description" placeholder="This specimen is...">
-            </div>
-
-          <!-- <textarea rows="2"></textarea> -->
+          <textarea rows="3" name="description" placeholder="This specimen is..."></textarea>
         </div> 
         <input class="ui fluid small green submit button" type="submit" placeholder="Submit">
       </div>
