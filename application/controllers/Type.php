@@ -24,6 +24,11 @@
 			}
 		}
 
+		public function del ($id) {
+			$this->type_model->del_type($id);
+			redirect('viewtype');
+		}
+
 		public function edit($id){
 
 			$data['Type'] = $this->type_model->edit_type($id);

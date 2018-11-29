@@ -17,7 +17,7 @@
           <center>
             <a href="<?php echo site_url();?>editcondition/<?php echo $element -> condition_id; ?>"><button class="circular ui icon button"><i class="edit icon"></i></button></a>
 
-            <a href="<?php echo site_url();?>deletecondition/<?php echo $element->condition_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
+            <a href="<?php echo site_url();?>delcondition/<?php echo $element->condition_id; ?>"><button class="circular ui icon button"><i class="trash icon"></i></button></a>
           </center>
         </td>
       </tr>

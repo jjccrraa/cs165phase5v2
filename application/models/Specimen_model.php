@@ -20,4 +20,9 @@
 
 			return $query->result();
 		}
+
+		public function del_patient($id){
+			$this -> db -> delete('Specimen', array('specimen_id' => $id) );
+			return;
+		}
 	}

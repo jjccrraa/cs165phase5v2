@@ -55,8 +55,12 @@ $route['viewspecimen'] = 'specimen/index';
 $route['viewtype'] = 'type/index';
 $route['viewconditions'] = 'conditions/index';
 
+// deletes
+$route['delpatient/(:any)']   = 'patient/del/$1';
+$route['delspecimen/(:any)']  = 'specimen/del/$1';
+$route['deltype/(:any)']      = 'type/del/$1';
+$route['delcondition/(:any)'] = 'conditions/del/$1';
 
-$route['delpatient/(:any)'] 	 = 'patient/del/$1';
 
 // adds
 $route['addpatient']   = 'patient/add';

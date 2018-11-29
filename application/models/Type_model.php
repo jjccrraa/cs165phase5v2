@@ -20,6 +20,11 @@
 			return $this->db->insert('Type', $data);
 		}
 
+		public function del_type($id){
+			$this -> db -> delete('Type', array('type_id' => $id) );
+			return;
+		}
+
 		public function edit_type($id){
 			$query = $this->db->get_where('Type', array('type_id' => $id ));
 			return $query->result();

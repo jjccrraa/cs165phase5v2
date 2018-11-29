@@ -20,6 +20,11 @@
 			return $this->db->insert('Conditions', $data);
 		}
 
+		public function del_condition($id){
+			$this -> db -> delete('Conditions', array('condition_id' => $id) );
+			return;
+		}
+
 		public function edit_condition($id){
 			$query = $this->db->get_where('Conditions', array('condition_id' => $id ));
 			return $query->result();
