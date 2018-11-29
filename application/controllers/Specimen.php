@@ -10,4 +10,9 @@
 			$this->load->view('specimen/index', $data);
 			$this->load->view('templates/footer');
 		}
+
+		public function del ($id) {
+			$this->specimen_model->del_specimen($id);
+			redirect('viewspecimen');
+		}
 	}

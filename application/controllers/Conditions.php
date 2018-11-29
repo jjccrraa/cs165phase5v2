@@ -26,6 +26,11 @@
 			}
 		}
 
+		public function del ($id) {
+			$this->conditions_model->del_condition($id);
+			redirect('viewconditions');
+		}
+
 		public function edit($id){
 
 			$data['Condition'] = $this->conditions_model->edit_condition($id);
