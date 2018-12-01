@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2018 at 10:26 AM
+-- Generation Time: Dec 01, 2018 at 07:39 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -52,6 +52,49 @@ INSERT INTO `Conditions` (`condition_id`, `condition_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `version` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`version`) VALUES
+(1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Pathologist`
+--
+
+CREATE TABLE `Pathologist` (
+  `user_id` int(11) NOT NULL,
+  `first_name_path` varchar(50) NOT NULL,
+  `middle_name_path` varchar(50) DEFAULT NULL,
+  `last_name_path` varchar(50) NOT NULL,
+  `name_suffix_path` varchar(50) DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Pathologist`
+--
+
+INSERT INTO `Pathologist` (`user_id`, `first_name_path`, `middle_name_path`, `last_name_path`, `name_suffix_path`, `creation_date`) VALUES
+(1, 'Jack', '', 'Kevorkian', '', '2018-11-17 05:34:00'),
+(2, 'Patty', 'The', 'Pathologist', '', '2018-11-17 05:34:00'),
+(3, 'Martin', 'Joseph', 'Fettman', '', '2018-11-17 05:34:00'),
+(4, 'Charles Scott', '', 'Sherrington', '', '2018-11-17 05:34:00'),
+(5, 'John', '', 'York', '', '2018-11-17 05:34:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Patient`
 --
 
@@ -71,15 +114,11 @@ CREATE TABLE `Patient` (
 --
 
 INSERT INTO `Patient` (`patient_id`, `first_name`, `middle_name`, `last_name`, `name_suffix`, `creation_date`, `birthdate`, `sex`) VALUES
-(1, 'Julius Carlo', 'Reyes', 'Aquino', '', '2018-11-17 05:57:42', '1997-07-10', 'Male'),
+(1, 'first', NULL, 'last', NULL, '2018-11-28 16:24:43', '2018-11-08', 'male'),
 (2, 'Gil', 'Rajendra', 'Ackerman', '', '2018-11-17 05:57:42', '1997-08-10', 'Male'),
 (3, 'Phoebe', '', 'Rothbauer', '', '2018-11-17 05:57:42', '1997-09-11', 'Female'),
-(4, 'Benjamin', 'Omid', 'Sydney', '', '2018-11-17 05:57:42', '1990-07-16', 'Male'),
 (5, 'Teofila', 'Rafael', 'Viteri', '', '2018-11-17 05:57:42', '1987-07-10', 'Female'),
-(6, 'DE', 'NULL', 'LE', 'TE', '2018-11-25 15:19:57', '2018-11-01', 'Male'),
-(7, 'Perseus', NULL, 'Jackson', NULL, '2018-11-25 15:57:32', '1997-08-18', 'Male'),
-(8, 'Annabeth', NULL, 'Chase', '', '2018-11-25 16:05:16', '1997-10-11', 'Female'),
-(9, 'Land', NULL, 'Grover', '', '2018-11-25 16:07:11', '1991-11-11', 'Male');
+(8, 'JC', 'R', 'A', '', '2018-11-29 16:02:30', '1990-11-11', 'M');
 
 -- --------------------------------------------------------
 
@@ -90,6 +129,7 @@ INSERT INTO `Patient` (`patient_id`, `first_name`, `middle_name`, `last_name`, `
 CREATE TABLE `Specimen` (
   `specimen_id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `condition_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
   `description` text,
@@ -100,8 +140,8 @@ CREATE TABLE `Specimen` (
 -- Dumping data for table `Specimen`
 --
 
-INSERT INTO `Specimen` (`specimen_id`, `patient_id`, `condition_id`, `type_id`, `description`, `date_acquired`) VALUES
-(1, 1, 2, 1, 'This is a specimen.', '2018-11-25 13:42:34');
+INSERT INTO `Specimen` (`specimen_id`, `patient_id`, `user_id`, `condition_id`, `type_id`, `description`, `date_acquired`) VALUES
+(7, 5, 1, 5, 1, 'uxtoh quo ng vietnamese at yung katabi ko', '2018-11-30 11:39:12');
 
 -- --------------------------------------------------------
 
@@ -125,32 +165,6 @@ INSERT INTO `Type` (`type_id`, `type_name`) VALUES
 (4, 'Saliva'),
 (5, 'Stool');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `User`
---
-
-CREATE TABLE `User` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `middle_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `name_suffix` varchar(50) NOT NULL,
-  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `User`
---
-
-INSERT INTO `User` (`user_id`, `first_name`, `middle_name`, `last_name`, `name_suffix`, `creation_date`) VALUES
-(1, 'Jack', '', 'Kevorkian', '', '2018-11-17 05:34:00'),
-(2, 'Patty', 'The', 'Pathologist', '', '2018-11-17 05:34:00'),
-(3, 'Martin', 'Joseph', 'Fettman', '', '2018-11-17 05:34:00'),
-(4, 'Charles Scott', '', 'Sherrington', '', '2018-11-17 05:34:00'),
-(5, 'John', '', 'York', '', '2018-11-17 05:34:00');
-
 --
 -- Indexes for dumped tables
 --
@@ -162,6 +176,12 @@ ALTER TABLE `Conditions`
   ADD PRIMARY KEY (`condition_id`);
 
 --
+-- Indexes for table `Pathologist`
+--
+ALTER TABLE `Pathologist`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- Indexes for table `Patient`
 --
 ALTER TABLE `Patient`
@@ -171,19 +191,16 @@ ALTER TABLE `Patient`
 -- Indexes for table `Specimen`
 --
 ALTER TABLE `Specimen`
-  ADD PRIMARY KEY (`specimen_id`);
+  ADD PRIMARY KEY (`specimen_id`),
+  ADD KEY `patient_id` (`patient_id`),
+  ADD KEY `condition_id` (`condition_id`),
+  ADD KEY `type_id` (`type_id`);
 
 --
 -- Indexes for table `Type`
 --
 ALTER TABLE `Type`
   ADD PRIMARY KEY (`type_id`);
-
---
--- Indexes for table `User`
---
-ALTER TABLE `User`
-  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -196,16 +213,22 @@ ALTER TABLE `Conditions`
   MODIFY `condition_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `Pathologist`
+--
+ALTER TABLE `Pathologist`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `Patient`
 --
 ALTER TABLE `Patient`
-  MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `Specimen`
 --
 ALTER TABLE `Specimen`
-  MODIFY `specimen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `specimen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `Type`
@@ -214,16 +237,18 @@ ALTER TABLE `Type`
   MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `User`
+-- Constraints for dumped tables
 --
-ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for table `Specimen`
+--
+ALTER TABLE `Specimen`
+  ADD CONSTRAINT `Specimen_ibfk_1` FOREIGN KEY (`condition_id`) REFERENCES `Conditions` (`condition_id`),
+  ADD CONSTRAINT `Specimen_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `Type` (`type_id`),
+  ADD CONSTRAINT `Specimen_ibfk_3` FOREIGN KEY (`patient_id`) REFERENCES `Patient` (`patient_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-<<<<<<< HEAD
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-=======
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
->>>>>>> 650887e55b0e8a60f8bf6363264a99836cbaf3bb

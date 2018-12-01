@@ -32,7 +32,7 @@ class Migration_initial extends CI_Migration {
         }
 */
         public function up(){
-/*                $this->dbforge->add_field(
+                $this->dbforge->add_field(
                    array(
                       'id' => array(
                          'type' => 'INT',
@@ -53,6 +53,6 @@ class Migration_initial extends CI_Migration {
 
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->create_table('users');
-*/
+
         }
 }
