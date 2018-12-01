@@ -71,6 +71,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </div>
   <div class="ui simple dropdown item">
+    Pathologists
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item" href="<?php echo site_url();?>viewpathologist"> View Pathologist Table</a>
+      <a class="item"href="<?php echo site_url();?>addpathologist">Add New Pathologist</a>
+    </div>
+  </div>
+  <div class="ui simple dropdown item">
     Specimen
     <i class="dropdown icon"></i>
     <div class="menu">
@@ -93,8 +101,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <a class="item" href="<?php echo site_url();?>viewconditions">View Conditions Table</a>
       <a class="item" href="<?php echo site_url();?>addcondition">Add New Condition</a>
     </div>
-  </div>
-  <div class="right menu">
-    <a class="ui item" href="<?php echo site_url();?>/signin"><center>Log-out <i class="arrow alternate circle right outline icon"></i></center></a>
   </div>
 </div>

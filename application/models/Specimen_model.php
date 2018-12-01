@@ -8,6 +8,7 @@
 			$query = $this->db->select('*')
                   ->from('Specimen')
                   ->join('Patient', 'Patient.patient_id = Specimen.patient_id')
+                  ->join('Pathologist', 'Pathologist.user_id = Specimen.user_id')
                   ->join('Conditions', 'Conditions.condition_id = Specimen.condition_id')
                   ->join('Type', 'Type.type_id = Specimen.type_id')
                   ->order_by('specimen_id', 'ASC')
@@ -18,6 +19,11 @@
 
 		public function get_patient(){
 			$query = $this->db->get("Patient"); 
+			return $query->result();
+		}
+
+		public function get_pathologist(){
+			$query = $this->db->get("Pathologist"); 
 			return $query->result();
 		}
 
@@ -34,6 +40,7 @@
 		public function add_specimen(){
 			$data = array(
 				'patient_id'   => $this->input->post('patient_id'),
+				'user_id'  => $this->input->post('user_id'),
 				'type_id' 	   => $this->input->post('type_id'),
 				'condition_id' => $this->input->post('condition_id'),
 				'description'  => $this->input->post('description')

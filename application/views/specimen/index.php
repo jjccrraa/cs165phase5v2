@@ -4,9 +4,10 @@
   <thead>
     <tr>
       <th>Specimen ID</th>
-      <th>Patient ID</th>
-      <th>Condition ID</th>
-      <th>Type ID</th>
+      <th>Patient</th>
+      <th>Pathologist</th>
+      <th>Condition</th>
+      <th>Type</th>
       <th>Description</th>
       <th>Date Acquired</th>
       <th><center>Actions</center></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><?php echo $element->specimen_id; ?></td>
         <td><?php echo $element->first_name." ".$element->middle_name." ".$element->last_name." ".$element->name_suffix; ?></td>
+        <td><?php echo $element->first_name_path." ".$element->middle_name_path." ".$element->last_name_path." ".$element->name_suffix_path; ?></td>
         <td><?php echo $element->condition_name; ?></td>
         <td><?php echo $element->type_name; ?></td>
         <td><?php echo $element->description; ?></td>

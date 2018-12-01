@@ -23,9 +23,22 @@
                 <?php endforeach; ?>
               </select>
               <input type="hidden" name="specimen_id" value="<?php echo $orig->specimen_id;  ?>">
+          </div>
+          <div class="field">
+            <label>Pathologist</label>
+              <select name="patient_id" class="ui dropdown">
+                <?php foreach ($Specimen as $orig) : ?>
+                  <?php foreach ($Pathologist as $element) : ?>
+                    <?php if ( $orig->user_id === $element->user_id ) : ?>
+                      <option value="<?php echo $element->user_id; ?>" selected><?php echo $element->first_name_path." ".$element->middle_name_path." ".$element->last_name_path." ".$element->name_suffix_path; ?></option>
+                    <?php else : ?>
+                      <option value="<?php echo $element->user_id; ?>" selected><?php echo $element->first_name_path." ".$element->middle_name_path." ".$element->last_name_path." ".$element->name_suffix_path; ?></option>
+                    <?php endif; ?>
+                  <?php endforeach; ?>    
+                <?php endforeach; ?>
+              </select>
+              <input type="hidden" name="specimen_id" value="<?php echo $orig->specimen_id;  ?>">
           </div>    
-        </div>
-        <div class="fields">
           <div class="field">
             <label>Type</label>
               <select name="type_id" class="ui dropdown">
@@ -53,14 +66,14 @@
                   <?php endforeach; ?>
                 <?php endforeach; ?>
               </select>
-          </div>    
-        </div>
+          </div>
          <div class="field">
           <label>Specimen Description</label>
           <?php foreach ($Specimen as $orig) : ?>
           <textarea rows="3" name="description" placeholder="This specimen is..."><?php echo $orig->description; ?></textarea>
           <?php endforeach; ?>
-        </div>  
+        </div>
+      </div>  
         <input class="ui fluid small green submit button" type="submit" placeholder="Submit">
       </div>
       <div class="ui error message"></div>
