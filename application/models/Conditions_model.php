@@ -38,7 +38,7 @@
 			//return $query->result();
 
 			$sql = "SELECT * FROM Conditions WHERE condition_id=".$id.";";
-			$this->db->query($sql);
+			$query = $this->db->query($sql);
 			return $query->result();
 		}
 
