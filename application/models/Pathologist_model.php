@@ -22,7 +22,13 @@
 		}
 
 		public function del_pathologist($id){
+			/*
 			$this -> db -> delete('Pathologist', array('user_id' => $id) );
+			return;
+			*/
+
+			$sql = "DELETE FROM Pathologist WHERE user_id = ".$id.";";
+			$this->db->query($sql);
 			return;
 		}
 		
@@ -33,7 +39,8 @@
 			*/
 
 
-			$query = $this->db->get_where('Patient', array('patient_id' => $id ));
+			$sql = "SELECT * FROM Pathologist WHERE user_id = ".$id.";";
+			$query = $this->db->query($sql);
 			return $query->result();
 		}
 
@@ -58,7 +65,7 @@
 			$name_suffix_path = $this->input->post('name_suffix_path');
 
 
-			$sql = "UPDATE Type Set 
+			$sql = "UPDATE Pathologist Set 
 			first_name_path  ='".$first_name_path."', 
 			middle_name_path ='".$middle_name_path."', 
 			last_name_path   ='".$last_name_path."', 
