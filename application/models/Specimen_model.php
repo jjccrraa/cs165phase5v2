@@ -5,7 +5,7 @@
 		}
 
 		public function get_specimen(){
-			$query = $this->db->select('*')
+			/*$query = $this->db->select('*')
                   ->from('Specimen')
                   ->join('Patient', 'Patient.patient_id = Specimen.patient_id')
                   ->join('Pathologist', 'Pathologist.user_id = Specimen.user_id')
@@ -13,7 +13,13 @@
                   ->join('Type', 'Type.type_id = Specimen.type_id')
                   ->order_by('specimen_id', 'ASC')
                   ->get();
-
+            */
+            $query = $this->db->query("select * from Specimen,Patient,Pathologist,Conditions,Type 
+				where Specimen.patient_id=Patient.patient_id 
+				and Specimen.user_id=Pathologist.user_id 
+				and Specimen.condition_id=Conditions.condition_id 
+				and Specimen.type_id=Type.type_id;");
+     
 			return $query->result();
 		}
 

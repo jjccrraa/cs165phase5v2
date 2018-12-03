@@ -22,7 +22,7 @@
 			$sql = "INSERT INTO Conditions VALUES (?, ?);";
 
 			
-			return $this->db->query($sql, $data);
+			return $this->db->query($sql, escape_str($data) );
 
 
 			
