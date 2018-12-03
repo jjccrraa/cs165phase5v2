@@ -19,7 +19,7 @@
 
 			// return $this->db->insert('Conditions', $data);
 			$id = $this->db->query("SELECT MAX(condition_id) from Conditions;") + 1;
-			return $this->db->query("INSERT INTO Conditions(condition_name) VALUES('" .$id.", .$this->input->post('condition_name')."')");
+			return $this->db->query("INSERT INTO Conditions("condition_name") VALUES('" .$this->input->post('condition_name')."')");
 
 
 			
