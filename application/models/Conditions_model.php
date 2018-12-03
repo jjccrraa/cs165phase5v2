@@ -18,7 +18,7 @@
 			);
 
 			// return $this->db->insert('Conditions', $data);
-			return $this->db->->query("INSERT INTO Conditions VALUES('" .$this->db->escape_str( $data )."')");
+			return $this->db->query("INSERT INTO Conditions VALUES('" .$this->db->escape_str( $data )."')");
 
 
 			
