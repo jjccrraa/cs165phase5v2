@@ -58,7 +58,7 @@
 			$condition_id = $this->input->post('condition_id');
 			$description   = $this->input->post('description');
 
-			$sql = "INSERT INTO Patient (patient_id, user_id, condition_id, type_id, description) VALUES ('" .$patient_id. "', '" .$user_id. "', '" .$type_id. "', '" .$condition_id. "', DEFAULT, '" .$description. "');";
+			$sql = "INSERT INTO Specimen (patient_id, user_id, condition_id, type_id, description) VALUES ('" .$patient_id. "', '" .$user_id. "', '" .$type_id. "', '" .$condition_id. "', DEFAULT, '" .$description. "');";
 			$this->db->query($sql);
 			return;	
 		}
