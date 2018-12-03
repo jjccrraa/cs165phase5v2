@@ -14,7 +14,7 @@
 
 		public function add_condition(){
 			$data = array(
-				'condition_name' = $this->input->post('condition_name') // condition_name
+				'condition_name' => $this->input->post('condition_name') // condition_name
 			);
 
 			// return $this->db->insert('Conditions', $data);
