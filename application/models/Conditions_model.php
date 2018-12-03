@@ -33,8 +33,8 @@
 			// return;
 
 			$condition_id = array('condition_id' => $id);
-			print_r($id)
-			$sql = "DELETE FROM Conditions WHERE condition_id = ".$condition_id.";";
+			print_r($id);
+			$sql = "DELETE FROM Conditions WHERE condition_id = ".$id.";";
 			$this->db->query($sql);
 		}
 
