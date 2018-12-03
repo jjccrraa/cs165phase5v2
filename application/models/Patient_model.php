@@ -62,13 +62,13 @@
 
 
 
-			$sql = "UPDATE Pathologist Set 
-			first_name  ='".$first_name."', 
+			$sql = "UPDATE Patient Set 
+			first_name  ='".$first_name. "', 
 			middle_name ='".$middle_name."', 
-			last_name   ='".$last_name."', 
+			last_name   ='".$last_name.  "', 
 			name_suffix ='".$name_suffix."',
-			birthdate   ='".$birthdate."', 
-			sex         ='".$sex."' 
+			birthdate   ='".$birthdate.  "', 
+			sex         ='".$sex.        "' 
 			WHERE patient_id=".$patient_id.";";
 			$this->db->query($sql);
 			return;
