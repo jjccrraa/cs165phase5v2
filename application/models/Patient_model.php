@@ -27,7 +27,7 @@
 			$middle_name = $this->input->post('middle_name');
 			$last_name   = $this->input->post('last_name');
 			$name_suffix = $this->input->post('name_suffix');
-			$birthdate   = $this->input->post('first_name');
+			$birthdate   = $this->input->post('birthdate');
 			$sex         = $this->input->post('sex');
 			
 			// return $this->db->insert('Conditions', $data);
