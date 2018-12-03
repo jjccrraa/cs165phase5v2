@@ -43,13 +43,6 @@
 		}
 
 		public function update_condition(){
-			//$data = array(
-			//	'condition_name' => $this->input->post('condition_name')
-			//);
-
-			//$this->db->where('condition_id', $this->input->post('condition_id'));
-			//return $this->db->update('Conditions', $data);
-
 			$condition_id = $this->input->post('condition_id');
 			$condition_name = $this->input->post('condition_name');
 
