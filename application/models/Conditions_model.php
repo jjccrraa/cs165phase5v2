@@ -17,7 +17,11 @@
 				'condition_name' => $this->input->post('condition_name')
 			);
 
-			return $this->db->insert('Conditions', $data);
+			// return $this->db->insert('Conditions', $data);
+			return $this->db->->query("INSERT INTO Conditions VALUES('" .$this->db->escape_str($this->input->post('condition_name') )."')");
+
+
+			
 		}
 
 		public function del_condition($id){
