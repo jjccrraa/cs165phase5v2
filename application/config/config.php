@@ -35,7 +35,7 @@ $config['base_url'] = 'http://specimen-inventory.herokuapp.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'views/home/home.php' // attempt at more elegant solution
+$config['index_page'] = ''; // attempt at more elegant solution
 // 'index.php/'; // initially '', corrected for heroku
 
 /*
@@ -137,7 +137,9 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
+// $config['composer_autoload'] = FALSE; // initially
+
+$config['composer_autoload'] = realpath(APPPATH . '/path/to/vendor/autoload.php');
 
 /*
 |--------------------------------------------------------------------------
