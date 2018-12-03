@@ -1,3 +1,5 @@
+-- generated from 
+-- http://www.sqlines.com/online
 DROP TABLE if exists Patient;
 DROP TABLE if exists Pathologist;
 DROP TABLE if exists Conditions;
