@@ -40,18 +40,14 @@ CREATE TABLE Pathologist (
 
 -- correct this
 CREATE TABLE Specimen (
-	specimen_id   serial not null primary key,
-  	patient_id 	  int NOT NULL,
-  	user_id 	  int NOT NULL,
-  	condition_id  int NOT NULL, 
-  	type_id 	  int NOT NULL,
-  	description   text,
-  	date_acquired timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  	CONSTRAINT specimen_patient 	  FOREIGN KEY (patient_id) 	 REFERENCES Patient 	(patient_id)   ON DELETE SET NULL,
-    specimen_pathologist FOREIGN KEY (user_id)		 REFERENCES Pathologist (user_id) 	   ON DELETE SET NULL,
-  	`specimen_type` 		  FOREIGN KEY (type_id) 	 REFERENCES Type 		(type_id) 	   ON DELETE SET NULL,
-  	`specimen_condition`   FOREIGN KEY (condition_id) REFERENCES Conditions 	(condition_id) ON DELETE SET NULL
-); ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    specimen_id   serial not null primary key,
+    patient_id   int REFERENCES Patient(patient_id),
+    user_id   int REFERENCES Pathologist(user_id),
+    condition_id  int REFERENCES Conditions(condition_id),
+    type_id   int REFERENCES Type(type_id),
+    description   text,
+    date_acquired timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP 
+); 
 
 INSERT INTO Conditions (condition_id, condition_name) VALUES
 (1, 'Centrifuged'),
