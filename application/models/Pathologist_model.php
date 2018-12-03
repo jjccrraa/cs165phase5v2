@@ -5,7 +5,7 @@
 		}
 
 		public function get_pathologist(){
-			$query = $this->db->get("Pathologist"); 
+			$query = $this->db->query("select * from Pathologist;");
 			return $query->result();
 
 		}

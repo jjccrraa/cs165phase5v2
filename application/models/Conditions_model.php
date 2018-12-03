@@ -7,7 +7,7 @@
 		public function get_condition(){
 			//$query = $this->db->get_where('Type');
 			//return $query->row_array();
-			$query = $this->db->get("Conditions"); 
+			$query = $this->db->query("select * from Conditions;");
 			return $query->result();
 
 		}

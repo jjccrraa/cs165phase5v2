@@ -5,7 +5,7 @@
 		}
 
 		public function get_patient(){
-			$query = $this->db->get("Patient"); 
+			$query = $this->db->query("select * from Patient;");
 			return $query->result();
 
 		}
