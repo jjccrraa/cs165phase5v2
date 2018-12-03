@@ -26,7 +26,7 @@
           </div>
           <div class="field">
             <label>Pathologist</label>
-              <select name="patient_id" class="ui dropdown">
+              <select name="user_id" class="ui dropdown">
                 <?php foreach ($Specimen as $orig) : ?>
                   <?php foreach ($Pathologist as $element) : ?>
                     <?php if ( $orig->user_id === $element->user_id ) : ?>

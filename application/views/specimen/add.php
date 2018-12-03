@@ -26,18 +26,18 @@
               </select>
           </div>    
           <div class="field">
-            <label>Type</label>
-              <select name="type_id" class="ui dropdown">
-                <?php foreach ($Type as $element) : ?>
-                <option value="<?php echo $element->type_id; ?>"><?php echo $element->type_name; ?></option>
-                <?php endforeach; ?>
-              </select>
-          </div>
-          <div class="field">
             <label>Condition</label>
               <select name="condition_id" class="ui dropdown">
                 <?php foreach ($Conditions as $element) : ?>
                 <option value="<?php echo $element->condition_id; ?>"><?php echo $element->condition_name; ?></option>
+                <?php endforeach; ?>
+              </select>
+          </div>
+          <div class="field">
+            <label>Type</label>
+              <select name="type_id" class="ui dropdown">
+                <?php foreach ($Type as $element) : ?>
+                <option value="<?php echo $element->type_id; ?>"><?php echo $element->type_name; ?></option>
                 <?php endforeach; ?>
               </select>
           </div>    
