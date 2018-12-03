@@ -20,7 +20,7 @@
 			// return $this->db->insert('Conditions', $data);
 			print_r($data);
 
-			return $this->db->query("INSERT INTO Conditions(\"condition_name\") VALUES ( '".$this->db->escape_str($data)."')");
+			return $this->db->query("INSERT INTO Conditions(\"condition_name\") VALUES ( '".$this->db->escape_str($this->input->post('condition_name'))."')");
 
 
 			
