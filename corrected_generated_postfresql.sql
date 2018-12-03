@@ -57,10 +57,10 @@ CREATE SEQUENCE Specimen_seq;
 
 CREATE TABLE Specimen (
     specimen_id   serial not null primary key,
-    patient_id   int REFERENCES Patient(patient_id),
-    user_id   int REFERENCES Pathologist(user_id),
-    condition_id  int REFERENCES Conditions(condition_id),
-    type_id   int REFERENCES Type(type_id),
+    patient_id   int REFERENCES Patient(patient_id) ON DELETE SET NULL,
+    user_id   int REFERENCES Pathologist(user_id) ON DELETE SET NULL,
+    condition_id  int REFERENCES Conditions(condition_id) ON DELETE SET NULL,
+    type_id   int REFERENCES Type(type_id) ON DELETE SET NULL,
     description   text,
     date_acquired timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP 
 ); 
