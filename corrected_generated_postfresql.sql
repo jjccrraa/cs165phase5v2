@@ -1,24 +1,38 @@
--- generated from 
--- http://www.sqlines.com/online
-DROP TABLE if exists Patient;
-DROP TABLE if exists Pathologist;
-DROP TABLE if exists Conditions;
-DROP TABLE if exists Type;
-DROP TABLE if exists Specimen;
+DROP DATABASE IF EXISTS inventory;
+CREATE DATABASE inventory;
+USE inventory;
+
+
+DROP TABLE Specimen;
+DROP TABLE Patient;
+DROP TABLE Pathologist;
+DROP TABLE Conditions;
+DROP TABLE Type;
+DROP SEQUENCE Specimen_seq;
+DROP SEQUENCE Patient_seq;
+DROP SEQUENCE Pathologist_seq;
+DROP SEQUENCE Conditions_seq;
+DROP SEQUENCE Type_seq;
+
+
+CREATE SEQUENCE Type_seq;
 
 CREATE TABLE Type (
-	 type_id serial not null primary key,
+	 type_id int not null default nextval ('Type_seq') primary key,
 	 type_name varchar(20) not null
 );
 
+CREATE SEQUENCE Conditions_seq;
+
 CREATE TABLE Conditions (
-	 condition_id serial not null primary key,
+	 condition_id int not null default nextval ('Conditions_seq') primary key,
 	 condition_name varchar(50) not null
 );
 
+CREATE SEQUENCE Patient_seq;
 
 CREATE TABLE Patient (
-	 patient_id serial not null primary key,
+	 patient_id int not null default nextval ('Patient_seq') primary key,
 	 first_name varchar(50) not null,
 	 middle_name varchar(50) default null,
 	 last_name varchar(50) not null,
@@ -28,9 +42,10 @@ CREATE TABLE Patient (
 	 birthdate date not null
 );
 
+CREATE SEQUENCE Pathologist_seq;
 
 CREATE TABLE Pathologist (
-	user_id serial not null primary key,
+	user_id int not null default nextval ('Pathologist_seq') primary key,
   	first_name_path varchar(50) NOT NULL,
   	middle_name_path varchar(50) DEFAULT NULL,
   	last_name_path varchar(50) NOT NULL,
@@ -38,7 +53,8 @@ CREATE TABLE Pathologist (
   	creation_date timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- correct this
+CREATE SEQUENCE Specimen_seq;
+
 CREATE TABLE Specimen (
     specimen_id   serial not null primary key,
     patient_id   int REFERENCES Patient(patient_id),
