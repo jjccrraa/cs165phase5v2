@@ -18,7 +18,7 @@
 			);
 
 			// return $this->db->insert('Conditions', $data);
-			return $this->db->query("INSERT INTO Conditions VALUES('" .$this->input->post('condition_name')."')");
+			return $this->db->query("INSERT INTO Conditions VALUES(DEFAULT, '" .$this->input->post('condition_name')."')");
 
 
 			
