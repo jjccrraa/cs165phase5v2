@@ -7,7 +7,8 @@
 		public function get_type(){
 			//$query = $this->db->get_where('Type');
 			//return $query->row_array();
-			$query = $this->db->get("Type"); 
+			$query = $this->db->query("select * from Type;");
+			//$query = $this->db->get("Type"); 
 			return $query->result();
 
 		}
