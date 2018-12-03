@@ -31,7 +31,8 @@
 		}
 		
 		public function edit_patient($id) {
-			$query = $this->db->get_where('Patient', array('patient_id' => $id ));
+			$sql = "SELECT * FROM Patient WHERE patient_id = ".$id.";";
+			$query = $this->db->query($sql);
 			return $query->result();
 		}
 
