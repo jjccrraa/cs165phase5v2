@@ -15,7 +15,7 @@
 		public function add_condition(){
 			$data = array(
 				$this->input->post('condition_name'), // condition_name
-				$this->db->query("SELECT MAX(condition_id) from Conditions;") + 1
+				$this->db->query("SELECT MAX(condition_id)+1 from Conditions;") 
 			);
 
 			// return $this->db->insert('Conditions', $data);
