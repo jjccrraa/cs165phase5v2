@@ -14,15 +14,13 @@
 
 		public function add_condition(){
 			$data = array(
-				$this->input->post('condition_name'), // condition_name
-				$this->db->query("SELECT MAX(condition_id)+1 from Conditions;") 
+				'condition_name' = $this->input->post('condition_name') // condition_name
 			);
 
 			// return $this->db->insert('Conditions', $data);
-			$sql = "INSERT INTO Conditions VALUES (?, ?);";
+			print_r($data);
 
-			
-			return $this->db->query($sql, escape_str($data) );
+			return $this->db->query("INSERT INTO Conditions(\"condition_name\") VALUES ( '".$this->db->escape_str($data)."')";
 
 
 			
