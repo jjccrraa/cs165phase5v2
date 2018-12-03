@@ -24,22 +24,22 @@
 		}
 
 		public function get_patient(){
-			$query = $this->db->get("Patient"); 
+			$query = $this->db->query("select * from Patient;");
 			return $query->result();
 		}
 
 		public function get_pathologist(){
-			$query = $this->db->get("Pathologist"); 
+			$query = $this->db->query("select * from Pathologist;");
 			return $query->result();
 		}
 
 		public function get_type(){
-			$query = $this->db->get("Type"); 
+			$query = $this->db->query("select * from Type;");
 			return $query->result();
 		}
 
 		public function get_conditions(){
-			$query = $this->db->get("Conditions"); 
+			$query = $this->db->query("select * from Condition;");
 			return $query->result();
 		}
 
