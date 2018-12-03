@@ -18,8 +18,6 @@
 			$birthdate   = $this->input->post('birthdate');
 			$sex         = $this->input->post('sex');
 			
-			// return $this->db->insert('Conditions', $data);
-			
 			$sql = "INSERT INTO Patient (first_name, middle_name, last_name, name_suffix, creation_date, birthdate, sex) VALUES ('" .$first_name. "', '" .$middle_name. "', '" .$last_name. "', '" .$name_suffix. "', DEFAULT, '" .$birthdate. "', '" .$sex. "');";
 			$this->db->query($sql);
 			return;	
@@ -38,21 +36,6 @@
 		}
 
 		public function update_patient() {
-			/*
-
-			$data = array(
-				'first_name'  => $this->input->post('first_name'),
-				'middle_name' => $this->input->post('middle_name'),
-				'last_name'   => $this->input->post('last_name'),
-				'name_suffix' => $this->input->post('name_suffix'),
-				'birthdate'   => $this->input->post('birthdate'),
-				'sex'		  => $this->input->post('sex')
-			);
-
-			$this->db->where('patient_id', $this->input->post('patient_id'));
-			return $this->db->update('Patient', $data);
-			*/
-
 			$patient_id  = $this->input->post('patient_id');
 			$first_name  = $this->input->post('first_name');
 			$middle_name = $this->input->post('middle_name');
