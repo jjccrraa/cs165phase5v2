@@ -11,7 +11,7 @@
 		}
 
 		public function add_type(){
-			$condition_name = $this->input->post('type_name'); 
+			$type_name = $this->input->post('type_name'); 
 			$sql = "INSERT INTO Type (type_name) VALUES ('" .$type_name. "');";
 			$this->db->query($sql);
 			return;	
