@@ -56,7 +56,8 @@
 		}
 
 		public function del_specimen($id){
-			$this -> db -> delete('Specimen', array('specimen_id' => $id) );
+			$sql = "DELETE FROM Specimen WHERE specimen_id = ".$id.";";
+			$this->db->query($sql);
 			return;
 		}
 
