@@ -63,8 +63,6 @@ $route['addcondition'] = 'conditions/add';
 $route['addspecimen']  = 'specimen/add';
 $route['addpathologist']   = 'pathologist/add';
 
-// test for rerouting
-$route['(:any)']   = '';
 
 // deletes
 $route['delpatient/(:any)']   = 'patient/del/$1';

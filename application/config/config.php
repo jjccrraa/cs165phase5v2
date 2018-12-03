@@ -35,7 +35,7 @@ $config['base_url'] = 'http://specimen-inventory.herokuapp.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'views/home/home.php'; // initially ''
 
 /*
 |--------------------------------------------------------------------------
