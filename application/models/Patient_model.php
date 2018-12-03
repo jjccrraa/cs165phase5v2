@@ -32,7 +32,7 @@
 			
 			// return $this->db->insert('Conditions', $data);
 			
-			$sql = "INSERT INTO Patient (first_name, middle_name, last_name, name_suffix, birthdate, sex) VALUES ('" .$first_name. "', '" .$middle_name. "', '" .$last_name. "', '" .$name_suffix. "', '" .$birthdate. "', '" .$sex. "');";
+			$sql = "INSERT INTO Patient (first_name, middle_name, last_name, name_suffix, creation_date, birthdate, sex) VALUES ('" .$first_name. "', '" .$middle_name. "', '" .$last_name. "', '" .$name_suffix. "', DEFAULT, '" .$birthdate. "', '" .$sex. "');";
 			$this->db->query($sql);
 			return;	
 
