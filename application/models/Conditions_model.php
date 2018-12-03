@@ -29,11 +29,6 @@
 		}
 
 		public function del_condition($id){
-			// $this -> db -> delete('Conditions', array('condition_id' => $id) );
-			// return;
-
-			$condition_id = array('condition_id' => $id);
-			print_r($id);
 			$sql = "DELETE FROM Conditions WHERE condition_id = ".$id.";";
 			$this->db->query($sql);
 		}
