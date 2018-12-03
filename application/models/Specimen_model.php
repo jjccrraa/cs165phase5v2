@@ -39,7 +39,7 @@
 		}
 
 		public function get_conditions(){
-			$query = $this->db->query("select * from Condition;");
+			$query = $this->db->query("select * from Conditions;");
 			return $query->result();
 		}
 
