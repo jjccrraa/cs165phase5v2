@@ -139,7 +139,7 @@ $config['subclass_prefix'] = 'MY_';
 */
 // $config['composer_autoload'] = FALSE; // initially
 
-$config['composer_autoload'] = realpath(APPPATH . '/path/to/vendor/autoload.php');
+$config['composer_autoload'] = realpath(APPPATH . '../vendor/autoload.php');
 
 /*
 |--------------------------------------------------------------------------
