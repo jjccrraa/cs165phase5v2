@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://infinite-basin-11772.herokuapp.com/';
+$config['base_url'] = 'http://specimen-inventory.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,8 @@ $config['base_url'] = 'http://infinite-basin-11772.herokuapp.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php/'; // attempt at more elegant solution
+// 'index.php/'; // initially '', corrected for heroku
 
 /*
 |--------------------------------------------------------------------------
@@ -136,7 +137,9 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
+// $config['composer_autoload'] = FALSE; // initially
+
+$config['composer_autoload'] = realpath(APPPATH . '../vendor/autoload.php');
 
 /*
 |--------------------------------------------------------------------------
