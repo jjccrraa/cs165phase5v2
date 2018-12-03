@@ -14,12 +14,15 @@
 
 		public function add_condition(){
 			$data = array(
-				'condition_name' => $this->input->post('condition_name')
+				$this->input->post('condition_name'), // condition_name
+				$this->db->query("SELECT MAX(condition_id) from Conditions;") + 1
 			);
 
 			// return $this->db->insert('Conditions', $data);
-			$id = $this->db->query("SELECT MAX(condition_id) from Conditions;") + 1;
-			return $this->db->query("INSERT INTO Conditions('condition_name') VALUES('" .$this->input->post('condition_name')."')");
+			$sql = "INSERT INTO Conditions VALUES (?, ?);";
+
+			
+			return $this->db->query($sql, $data);
 
 
 			
