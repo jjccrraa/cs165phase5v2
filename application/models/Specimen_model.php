@@ -82,7 +82,7 @@
 			$condition_id = $this->input->post('condition_id');
 			$description  = $this->input->post('description');
 
-			$sql = "UPDATE Patient Set 
+			$sql = "UPDATE Specimen Set 
 			patient_id  ='".$patient_id. "', 
 			type_id ='".$type_id."', 
 			condition_id   ='".$condition_id.  "', 
