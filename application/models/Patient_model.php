@@ -66,7 +66,7 @@
 			first_name  ='".$first_name."', 
 			middle_name ='".$middle_name."', 
 			last_name   ='".$last_name."', 
-			name_suffix ='".$name_suffix."'
+			name_suffix ='".$name_suffix."',
 			birthdate   ='".$birthdate."', 
 			sex         ='".$sex."', 
 			WHERE patient_id=".$patient_id.";";
