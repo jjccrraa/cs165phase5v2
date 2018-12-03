@@ -11,18 +11,6 @@
 		}
 
 		public function add_patient(){
-			
-			/*
-			$data = array(
-				'first_name'  => $this->input->post('first_name'),
-				'middle_name' => $this->input->post('middle_name'),
-				'last_name'   => $this->input->post('last_name'),
-				'name_suffix' => $this->input->post('name_suffix'),
-				'birthdate'   => $this->input->post('birthdate'),
-				'sex' 		  => $this->input->post('sex')
-			);
-			*/
-
 			$first_name  = $this->input->post('first_name');
 			$middle_name = $this->input->post('middle_name');
 			$last_name   = $this->input->post('last_name');
@@ -35,8 +23,6 @@
 			$sql = "INSERT INTO Patient (first_name, middle_name, last_name, name_suffix, creation_date, birthdate, sex) VALUES ('" .$first_name. "', '" .$middle_name. "', '" .$last_name. "', '" .$name_suffix. "', DEFAULT, '" .$birthdate. "', '" .$sex. "');";
 			$this->db->query($sql);
 			return;	
-
-			return $this->db->insert('Patient', $data);
 		}
 
 		public function del_patient($id){
