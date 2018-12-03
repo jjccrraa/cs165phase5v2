@@ -23,11 +23,9 @@
 
 			// return $this->db->insert('Conditions', $data);
 			
-			$sql = "INSERT INTO Conditions (condition_name) VALUES (" .$condition_name. ");"
-			return $this->db->query($sql);
-
-
-			
+			$sql = "INSERT INTO Conditions (condition_name) VALUES (" .$condition_name. ");";
+			$this->db->query($sql);
+			return;			
 		}
 
 		public function del_condition($id){
