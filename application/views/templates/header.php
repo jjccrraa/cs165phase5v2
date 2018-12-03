@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     Patients
     <i class="dropdown icon"></i>
     <div class="menu">
-      <a class="item" href="/viewpatient"> View Patient Table</a>
+      <a class="item" href="<?php echo site_url();?>viewpatient"> View Patient Table</a>
       <a class="item"href="<?php echo site_url();?>addpatient">Add New Patient</a>
     </div>
   </div>
