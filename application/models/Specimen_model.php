@@ -52,7 +52,15 @@
 				'description'  => $this->input->post('description')
 			);
 
-			return $this->db->insert('Specimen', $data);
+			$patient_id  = $this->input->post('patient_id');
+			$user_id = $this->input->post('user_id');
+			$type_id   = $this->input->post('type_id');
+			$condition_id = $this->input->post('condition_id');
+			$description   = $this->input->post('description');
+
+			$sql = "INSERT INTO Patient (patient_id, user_id, condition_id, type_id, description) VALUES ('" .$patient_id. "', '" .$user_id. "', '" .$type_id. "', '" .$condition_id. "', DEFAULT, '" .$description. "');";
+			$this->db->query($sql);
+			return;	
 		}
 
 		public function del_specimen($id){
