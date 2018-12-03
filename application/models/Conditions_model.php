@@ -53,7 +53,7 @@
 			$condition_id = $this->input->post('condition_id');
 			$condition_name = $this->input->post('condition_name');
 
-			$sql = "UPDATE Conditions Set condition_name='".$condition_name."' WHERE condition_id=".$condition_id";";
+			$sql = "UPDATE Conditions Set condition_name='".$condition_name."' WHERE condition_id=".$condition_id.";";
 			$this->db->query($sql);
 			return;
 		}
