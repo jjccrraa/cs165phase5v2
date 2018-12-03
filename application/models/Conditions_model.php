@@ -23,7 +23,7 @@
 
 			// return $this->db->insert('Conditions', $data);
 			
-			$sql = "INSERT INTO Conditions (condition_name) VALUES (" .$condition_name. ");";
+			$sql = "INSERT INTO Conditions (condition_name) VALUES ('" .$condition_name. "');";
 			$this->db->query($sql);
 			return;			
 		}
