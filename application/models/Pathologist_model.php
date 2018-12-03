@@ -11,7 +11,7 @@
 		}
 
 		public function add_pathologist(){
-			
+			/*
 			$data = array(
 				'first_name_path'  => $this->input->post('first_name_path'),
 				'middle_name_path' => $this->input->post('middle_name_path'),
@@ -20,6 +20,16 @@
 			);
 
 			return $this->db->insert('Pathologist', $data);
+			*/
+
+			$first_name_path = $this->input->post('first_name_path'),
+			$middle_name_path = $this->input->post('middle_name_path'),
+			$last_name_path   = $this->input->post('last_name_path'),
+			$name_suffix_path = $this->input->post('name_suffix_path'),
+
+			$sql = "INSERT INTO Pathologist  (first_name_path, middle_name_path, last_name_path, name_suffix_path) VALUES ('" .$first_name_path. "', '" .$middle_name_path. "', '" .$last_name_path. "', '" .$name_suffix_path. "');";
+			$this->db->query($sql);
+			return;		
 		}
 
 		public function del_pathologist($id){
