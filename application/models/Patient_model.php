@@ -68,7 +68,7 @@
 			last_name   ='".$last_name."', 
 			name_suffix ='".$name_suffix."',
 			birthdate   ='".$birthdate."', 
-			sex         ='".$sex."', 
+			sex         ='".$sex."' 
 			WHERE patient_id=".$patient_id.";";
 			$this->db->query($sql);
 			return;
