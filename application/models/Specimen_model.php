@@ -70,20 +70,25 @@
 		}
 
 		public function edit_specimen($id) {
-			$query = $this->db->get_where('Specimen', array('specimen_id' => $id ));
+			$sql = "SELECT * FROM Specimen WHERE specimen_id = ".$id.";";
+			$query = $this->db->query($sql);
 			return $query->result();
 		}
 
 		public function update_specimen() {
+			$specimen_id  = $this->input->post('specimen_id');
+			$patient_id   = $this->input->post('patient_id');
+			$type_id      = $this->input->post('type_id');
+			$condition_id = $this->input->post('condition_id');
+			$description  = $this->input->post('description');
 
-			$data = array(
-				'patient_id'   => $this->input->post('patient_id'),
-				'type_id' 	   => $this->input->post('type_id'),
-				'condition_id' => $this->input->post('condition_id'),
-				'description'  => $this->input->post('description')
-			);
-
-			$this->db->where('specimen_id', $this->input->post('specimen_id'));
-			return $this->db->update('Specimen', $data);
+			$sql = "UPDATE Patient Set 
+			patient_id  ='".$patient_id. "', 
+			type_id ='".$type_id."', 
+			condition_id   ='".$condition_id.  "', 
+			description ='".$description."' 
+			WHERE specimen_id=".$specimen_id.";";
+			$this->db->query($sql);
+			return;
 		}
 	}

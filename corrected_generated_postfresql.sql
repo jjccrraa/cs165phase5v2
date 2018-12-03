@@ -65,39 +65,41 @@ CREATE TABLE Specimen (
     date_acquired timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP 
 ); 
 
-INSERT INTO Conditions (condition_id, condition_name) VALUES
-(1, 'Centrifuged'),
-(2, 'Frozen'),
-(3, 'Clotted'),
-(4, 'Cool'),
-(5, 'Contaminated'),
-(6, 'Live'),
-(7, 'Dry'),
-(8, 'Expired'),
-(9, 'Rotten'),
-(10, 'Good');
+INSERT INTO Conditions (condition_name) VALUES
+('Centrifuged'),
+('Frozen'),
+('Clotted'),
+('Cool'),
+('Contaminated'),
+('Live'),
+('Dry'),
+('Expired'),
+('Rotten'),
+('Good');
 
-INSERT INTO Type (type_id, type_name) VALUES
-(1, 'Blood'),
-(2, 'Urine'),
-(3, 'Feces'),
-(4, 'Saliva'),
-(5, 'Stool');
-
-INSERT INTO Specimen (specimen_id, patient_id, user_id, condition_id, type_id, description, date_acquired) VALUES
-(1, 1, 1, 1, 1, 'This is a specimen', '2018-11-30 11:39:12');
-
-INSERT INTO Pathologist (user_id, first_name_path, middle_name_path, last_name_path, name_suffix_path, creation_date) VALUES
-(1, 'Jack', '', 'Kevorkian', '', '2018-11-17 05:34:00'),
-(2, 'Patty', 'The', 'Pathologist', '', '2018-11-17 05:34:00'),
-(3, 'Martin', 'Joseph', 'Fettman', '', '2018-11-17 05:34:00'),
-(4, 'Charles Scott', '', 'Sherrington', '', '2018-11-17 05:34:00'),
-(5, 'John', '', 'York', '', '2018-11-17 05:34:00');
+INSERT INTO Type (type_name) VALUES
+('Blood'),
+('Urine'),
+('Feces'),
+('Saliva'),
+('Stool');
 
 
+INSERT INTO Pathologist (first_name_path, middle_name_path, last_name_path, name_suffix_path, creation_date) VALUES
+('Jack', '', 'Kevorkian', '', '2018-11-17 05:34:00'),
+('Patty', 'The', 'Pathologist', '', '2018-11-17 05:34:00'),
+('Martin', 'Joseph', 'Fettman', '', '2018-11-17 05:34:00'),
+('Charles Scott', '', 'Sherrington', '', '2018-11-17 05:34:00'),
+('John', '', 'York', '', '2018-11-17 05:34:00');
 
-INSERT INTO Patient (patient_id, first_name, middle_name, last_name, name_suffix, creation_date, birthdate, sex) VALUES
-(1, 'Julius Carlo', 'Reyes', 'Aquino', NULL, '2018-11-28 16:24:43', '2018-11-08', 'male'),
-(2, 'Gil', 'Rajendra', 'Ackerman', '', '2018-11-17 05:57:42', '1997-08-10', 'Male'),
-(3, 'Phoebe', '', 'Rothbauer', '', '2018-11-17 05:57:42', '1997-09-11', 'Female'),
-(4, 'Teofila', 'Rafael', 'Viteri', '', '2018-11-17 05:57:42', '1987-07-10', 'Female');
+
+INSERT INTO Patient (first_name, middle_name, last_name, name_suffix, creation_date, birthdate, sex) VALUES
+('Julius Carlo', 'Reyes', 'Aquino', NULL, '2018-11-28 16:24:43', '2018-11-08', 'male'),
+('Gil', 'Rajendra', 'Ackerman', '', '2018-11-17 05:57:42', '1997-08-10', 'Male'),
+('Phoebe', '', 'Rothbauer', '', '2018-11-17 05:57:42', '1997-09-11', 'Female'),
+('Teofila', 'Rafael', 'Viteri', '', '2018-11-17 05:57:42', '1987-07-10', 'Female');
+
+
+
+INSERT INTO Specimen (patient_id, user_id, condition_id, type_id, description, date_acquired) VALUES
+(1, 1, 1, 1, 'This is a specimen', '2018-11-30 11:39:12');
