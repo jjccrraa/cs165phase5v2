@@ -26,7 +26,8 @@
 		}
 
 		public function del_patient($id){
-			$this -> db -> delete('Patient', array('patient_id' => $id) );
+			$sql = "DELETE FROM Patient WHERE patient_id = ".$id.";";
+			$this->db->query($sql);
 			return;
 		}
 		
